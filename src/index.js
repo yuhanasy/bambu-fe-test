@@ -1,1 +1,1 @@
-console.log('My minimal React webpack configuration');
+console.log('test my webpack configuration ==> it is working');
