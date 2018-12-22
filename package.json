@@ -1,0 +1,19 @@
+{
+  "name": "bambu-life-coding-challenge",
+  "version": "1.0.0",
+  "description": "app that shows stocks in OHLC chart",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/yuhanasy/bambu-fe-test.git"
+  },
+  "author": "Yuhanas Yulianto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuhanasy/bambu-fe-test/issues"
+  },
+  "homepage": "https://github.com/yuhanasy/bambu-fe-test#readme"
+}
