@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "app that shows stocks in OHLC chart",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open",
+    "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production"
   },
   "repository": {
@@ -28,7 +28,7 @@
     "html-webpack-plugin": "^3.2.0",
     "webpack": "^4.28.1",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.11"
+    "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
     "react": "^16.7.0",
