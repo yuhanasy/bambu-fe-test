@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "app that shows stocks in OHLC chart",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open",
+    "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production"
   },
   "repository": {
@@ -32,6 +32,9 @@
     "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.5",
+    "@emotion/styled": "^10.0.5",
+    "babel-plugin-emotion": "^10.0.5",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
   }
