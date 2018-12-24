@@ -1,8 +1,8 @@
-import React, { Component} from 'react';
+import React, { Component } from "react";
 
-import Nav from './components/nav/index';
-import { Container } from './shared/styles';
-
+import Nav from "./components/nav/index";
+import SideBar from "./components/sidebar/index";
+import { Page, Container, Row, Col } from "./shared/layouts";
 
 class App extends Component {
   constructor(props) {
@@ -11,13 +11,16 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <Nav theme={this.props.theme} />
-        <Container>
-          Hello Kamu, mana React(si) mu?
-        </Container>
-      </div>
-    )
+      <Page>
+        <Row>
+          <Nav />
+          <Col>
+            <SideBar />
+            <Container>Hello Kamu, mana React(si) mu?</Container>
+          </Col>
+        </Row>
+      </Page>
+    );
   }
 }
 
