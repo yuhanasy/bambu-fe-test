@@ -1,24 +1,24 @@
-import React from 'react';
-
-import { ThemeProvider } from 'emotion-theming';
+import React, { Component} from 'react';
 
 import Nav from './components/nav/index';
-import { Container } from './shared/styles'
+import { Container } from './shared/styles';
 
 
-const darkBlue = {
-  background: 'blue'
-}
+class App extends Component {
+  constructor(props) {
+    super(props);
+  }
 
-const App = () => {
-  return (
-    <ThemeProvider theme={darkBlue}>
-      <Nav />
-      <Container>
-        Hello Kamu, mana React(si) mu?
-      </Container>
-    </ThemeProvider>
-  )
+  render() {
+    return (
+      <div>
+        <Nav theme={this.props.theme} />
+        <Container>
+          Hello Kamu, mana React(si) mu?
+        </Container>
+      </div>
+    )
+  }
 }
 
 export default App;

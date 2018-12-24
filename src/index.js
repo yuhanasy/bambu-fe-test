@@ -4,4 +4,17 @@ import { render } from 'react-dom';
 import './global-styles.css';
 import App from './App';
 
-render(<App />, document.getElementById('root'));
+const dark = {
+  fontColor: "#fdfdfd",
+  backgroundColor: '#182037',
+  mainColor: '#131931',
+  cardColor: '#293251'
+}
+
+const UI = () => {
+  return(
+    <App />
+  )
+}
+
+render(<UI />, document.getElementById('root'));

@@ -2,9 +2,9 @@ import React from 'react';
 
 import { NavWrapper, NavContainer, Logo } from './styles';
 
-const Nav = () => {
+const Nav = (props) => {
   return(
-    <NavWrapper>
+    <NavWrapper theme={props.theme}>
       <NavContainer>
         <Logo>Stock Exchange</Logo>
         <p>menu</p>
