@@ -10,6 +10,7 @@ export const NavContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   color: #fdfdfd;
+  border-bottom: 1px solid #182037;
 `;
 
 export const Logo = styled.div`

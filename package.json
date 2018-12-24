@@ -36,6 +36,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.5",
     "@emotion/styled": "^10.0.5",
+    "axios": "^0.18.0",
     "babel-plugin-emotion": "^10.0.5",
     "emotion-theming": "^10.0.5",
     "react": "^16.7.0",
