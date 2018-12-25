@@ -21,4 +21,26 @@ export const SidebarCard = styled.li`
   justify-content: flex-start;
   align-items: center;
   border-bottom: 1px solid #182037;
+  ::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    height: inherit;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 0 0 0.3em;
+    visibility: hidden;
+  }
+  :hover {
+    background-color: #182037;
+    ::before {
+      visibility: visible;
+    }
+  }
+  :active {
+    background-color: #182037;
+    ::before {
+      visibility: visible;
+    }
+  }
 `;

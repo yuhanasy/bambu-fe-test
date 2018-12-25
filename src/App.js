@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import axios from 'axios';
 
 import Nav from "./components/nav/index";
 import SideBar from "./components/sidebar/index";
 import { Page, Container, Row, Col } from "./shared/layouts";
 import { fetchData } from './utils/fetchData';
+import { symbols } from './utils/stockData'
 
 class App extends Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class App extends Component {
         <Row>
           <Nav />
           <Col>
-            <SideBar />
+            <SideBar symbols={symbols} />
             <Container>Hello Kamu, mana React(si) mu?</Container>
           </Col>
         </Row>
