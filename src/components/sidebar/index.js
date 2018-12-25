@@ -5,6 +5,12 @@ import { SidebarWrapper, SidebarCardGroup, SidebarCard } from "./styles";
 class SideBar extends Component {
   constructor(props) {
     super(props)
+
+    this.handleOnclick = this.handleOnclick.bind(this);
+  }
+
+  handleOnclick(symbol) {
+    this.props.selectData(symbol)
   }
 
   render() {
@@ -12,9 +18,9 @@ class SideBar extends Component {
     return (
       <SidebarWrapper>
         <SidebarCardGroup>
-          {symbols.map(symbol => {
+          {symbols.map((symbol, index) => {
             return(
-              <SidebarCard key={symbol}>
+              <SidebarCard onClick={() => this.handleOnclick(symbol)} key={index} >
                 {symbol}
               </SidebarCard>
             )
