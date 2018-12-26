@@ -11,7 +11,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      symbol: ''
+      symbol: 'MSFT'
     }
 
     this.fetchSelectedData = this.fetchSelectedData.bind(this)
@@ -38,7 +38,7 @@ class App extends Component {
           <Nav />
           <Col>
             <SideBar symbols={symbols} selectData={this.fetchSelectedData} />
-            <Container>Hello Kamu, mana React(si) mu?</Container>
+            <Container>Welcome, wanna check {this.state.symbol} stock today?</Container>
           </Col>
         </Row>
       </Page>
