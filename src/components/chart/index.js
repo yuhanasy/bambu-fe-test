@@ -59,9 +59,7 @@ class ChartWrapper extends Component {
           yGrids={yGrids}
           xGrids={xGrids}
           intervalY={intervalY}
-          intervalX={intervalX}
           gridMin={gridMin}
-          gridMax={gridMax}
           dataLength={dataLength}
         />
       </ChartContainer>

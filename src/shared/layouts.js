@@ -23,3 +23,14 @@ export const Col = styled.div`
   display: flex;
   flex-grow: 1;
 `;
+
+export const Main = styled.main`
+  flex: 1 1 480px;
+  padding: 20px;
+  
+  background-color: #CBF3F0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;

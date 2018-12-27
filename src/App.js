@@ -2,8 +2,9 @@ import React, { Component } from "react";
 
 import Nav from "./components/nav/index";
 import SideBar from "./components/sidebar/index";
-import { Page, Container, Row, Col } from "./shared/layouts";
-import MainSection from "./components/main/index";
+import { Page, Container, Row, Col, Main } from "./shared/layouts";
+import { Card } from './components/card/styles';
+import ChartWrapper from './components/chart/index';
 
 import { fetchData } from './utils/fetchData';
 import { symbols } from './utils/stockData'
@@ -39,7 +40,11 @@ class App extends Component {
           <Nav />
           <Col>
             <SideBar symbols={symbols} selectData={this.fetchSelectedData} />
-            <MainSection />
+            <Main>
+              <Card>
+                <ChartWrapper />
+              </Card>
+            </Main>
           </Col>
         </Row>
       </Page>
