@@ -26,6 +26,7 @@ export const Col = styled.div`
 
 export const Main = styled.main`
   flex: 1 1 480px;
+  box-sizing: border-box;
   padding: 20px;
   
   display: flex;

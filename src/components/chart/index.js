@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import { ChartContainer } from "./styles";
-import AxesXY from "./Axes";
+import AxesXY from "./AxesXY";
 import Ohlc from "./Ohlc";
 
 import { data } from "./data";

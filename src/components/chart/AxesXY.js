@@ -31,11 +31,7 @@ const AxesXY = ({
   dataLength
 }) => {
   return (
-    <Axes viewBox={`0 0 ${width} ${height}`} preserveAspectRatio='xMidYMid meet'>
-    <style>
-    {`.small { "font: italic 13px sans-serif;" }`}
-    .heavy { "font: bold 30px sans-serif;" }
-  </style>
+    <Axes viewBox={`0 0 ${width} ${height}`} preserveAspectRatio='none'>
       <g>
         {/* <line
           x1="10%"
