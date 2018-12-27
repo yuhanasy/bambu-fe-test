@@ -1,4 +1,4 @@
-import styled from '@emotion/styled/'
+import styled from '@emotion/styled/';
 
 export const Page = styled.div`
   height: 100vh;
@@ -22,4 +22,13 @@ export const Row = styled.div`
 export const Col = styled.div`
   display: flex;
   flex-grow: 1;
+`;
+
+export const Main = styled.main`
+  flex: 1 1 480px;
+  padding: 20px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
