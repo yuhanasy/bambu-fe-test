@@ -17,10 +17,13 @@ export const SidebarCard = styled.li`
   height: 3rem;
   padding-left: 2rem;
   color: #fdfdfd;
+  background-color: ${props => props.selected ? '#62dce9' : '#131931'};
+  border-bottom: 1px solid #182037;
+  cursor: pointer;
+
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  border-bottom: 1px solid #182037;
   ::before{
     content: '';
     position: absolute;
@@ -29,18 +32,12 @@ export const SidebarCard = styled.li`
     border-color: #fff;
     border-style: solid;
     border-width: 0 0 0 0.3em;
-    visibility: hidden;
+    visibility: ${props => props.selected ? 'visible' : 'hidden'};
   }
   :hover {
-    background-color: #182037;
-    ::before {
-      visibility: visible;
-    }
+    background-color: ${props => props.selected ? '#62dce9' : '#182037'};
   }
   :active {
-    background-color: #182037;
-    ::before {
-      visibility: visible;
-    }
+    background-color: #62dce9;
   }
 `;
