@@ -4,7 +4,7 @@ export const SidebarWrapper = styled.aside`
   width: 300px;
   background-color: #131931;
   position: relative;
-  transition: all 0.5s ease-in;
+  transition: all .3s ease-in;
 
   @media (max-height: 600px) {
     overflow-y: scroll;
@@ -25,10 +25,6 @@ export const SidebarWrapper = styled.aside`
     ::-webkit-scrollbar {
       width: 6px;
     }
-
-    ::-webkit-scrollbar:hover {
-      width: 8px;
-    }
   }
 
   @media (max-width: 900px) {
@@ -36,7 +32,16 @@ export const SidebarWrapper = styled.aside`
   }
 
   @media (max-width: 450px) {
-    display: none;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+
+    width: 80%;
+    height: 10vh;
+    border-radius: 8px;
+    overflow-y: scroll;
   }
 `;
 
@@ -61,6 +66,10 @@ export const SidebarCard = styled.li`
 
   @media (max-width: 900px) {
     padding-left: 1rem;
+  }
+
+  @media (max-width: 450px) {
+    text-align: center;
   }
 
   ::before {

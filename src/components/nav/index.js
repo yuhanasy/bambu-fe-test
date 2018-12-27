@@ -7,7 +7,6 @@ const Nav = () => {
     <NavWrapper>
       <NavContainer>
         <Logo>Stock Exchange</Logo>
-        <p>menu</p>
       </NavContainer>
     </NavWrapper>
   );

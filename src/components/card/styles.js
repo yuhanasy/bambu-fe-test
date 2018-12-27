@@ -10,4 +10,8 @@ export const Card = styled.div`
   border-radius: 8px;
   box-sizing: border-box;
   padding: 20px;
+
+  @media (max-width: 450px) {
+    border-radius: 0;
+  }
 `;
