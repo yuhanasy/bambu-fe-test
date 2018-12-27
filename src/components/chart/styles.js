@@ -12,13 +12,13 @@ export const Chart = styled.svg`
   height: 90%;
   position: absolute;
   left: 10%;
-  background-color: #FFBF69;
+  background-color: #ffbf69;
 `;
 
 export const Axes = styled.svg`
   width: 100%;
   height: 100%;
   font-size: 4px;
-  position:absolute;
+  position: absolute;
   z-index: 5;
 `;
