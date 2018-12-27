@@ -2,9 +2,12 @@ import React from "react";
 
 import { Chart } from "./styles";
 
+const bullish = '#62dce9'
+const bearish = '#ea647f'
+
 const Ohlc = ({ arr, width, height, intervalX, coordinateY }) => {
   return (
-    <Chart viewBox={`0 0 ${width} ${height}`} preserveAspectRatio={"none"}>
+    <Chart viewBox={`0 0 ${width} ${height}`} preserveAspectRatio='xMidYMid meet'>
       <g id="ohlc">
         {arr.map((data, index) => {
           let x = index * intervalX + intervalX;
@@ -12,6 +15,7 @@ const Ohlc = ({ arr, width, height, intervalX, coordinateY }) => {
           let high = coordinateY(data["2. high"]);
           let low = coordinateY(data["3. low"]);
           let close = coordinateY(data["4. close"]);
+          let color = open < close ? (bearish) : (bullish);
           return (
             <g key={index}>
               {/* <line x1={x} y1='0' x2={x} y2={height} stroke='#aaffff' strokeWidth='1' /> */}
@@ -21,24 +25,27 @@ const Ohlc = ({ arr, width, height, intervalX, coordinateY }) => {
                 y1={low}
                 x2={x}
                 y2={high}
-                stroke="#FF9F1C"
+                stroke={color}
                 strokeWidth="1"
+                strokeLinecap="round"
               />
               <line
                 x1={x - 2}
                 y1={open}
                 x2={x}
                 y2={open}
-                stroke="#FF9F1C"
+                stroke={color}
                 strokeWidth="1"
+                strokeLinecap="round"
               />
               <line
                 x1={x}
                 y1={close}
                 x2={x + 2}
                 y2={close}
-                stroke="#FF9F1C"
+                stroke={color}
                 strokeWidth="1"
+                strokeLinecap="round"
               />
             </g>
           );

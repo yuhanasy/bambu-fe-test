@@ -19,6 +19,8 @@ const months = {
 
 let month = "00";
 
+let color = '#fff'
+
 const AxesXY = ({
   width,
   height,
@@ -29,23 +31,27 @@ const AxesXY = ({
   dataLength
 }) => {
   return (
-    <Axes viewBox={`0 0 ${width} ${height}`} preserveAspectRatio={"none"}>
+    <Axes viewBox={`0 0 ${width} ${height}`} preserveAspectRatio='xMidYMid meet'>
+    <style>
+    {`.small { "font: italic 13px sans-serif;" }`}
+    .heavy { "font: bold 30px sans-serif;" }
+  </style>
       <g>
-        <line
+        {/* <line
           x1="10%"
           x2="10%"
           y1="0"
           y2="90%"
-          stroke="#000"
+          stroke={color}
           strokeWidth=".5"
-        />
-        <line
+        /> */}
+        {/* <line
           x1="10%"
           x2="100%"
           y1="90%"
           y2="90%"
-          stroke="#000"
-          strokeWidth=".5"
+          stroke={color}
+          strokeWidth=".5" */}
         />
         {yGrids.map(grid => {
           let tick = height - grid * intervalY * 0.9 - height * 0.1;
@@ -57,11 +63,11 @@ const AxesXY = ({
                 x2="10%"
                 y1={tick}
                 y2={tick}
-                stroke="#000"
+                stroke={color}
                 strokeWidth=".5"
               />
               {tickMark % 5 === 0 ? (
-                <text x="10" y={tick} textLength="10">
+                <text x="10" y={tick} fill={color}>
                   $ {tickMark}
                 </text>
               ) : null}
@@ -79,10 +85,10 @@ const AxesXY = ({
                   x2={tick}
                   y1="90%"
                   y2="91%"
-                  stroke="#000"
+                  stroke={color}
                   strokeWidth=".5"
                 />
-                <text x={tick + 20} y="92%">
+                <text x={tick + 20} y="92%" fill={color}>
                   {months[month]}
                 </text>
               </g>

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import Nav from "./components/nav/index";
 import SideBar from "./components/sidebar/index";
-import { Page, Container, Row, Col, Main } from "./shared/layouts";
+import { Page, Row, Col, Main } from "./shared/layouts";
 import { Card } from './components/card/styles';
 import ChartWrapper from './components/chart/index';
 

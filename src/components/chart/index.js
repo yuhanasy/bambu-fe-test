@@ -27,8 +27,8 @@ const arrayOfData = flattenData(arr);
 let min = Math.min(...arrayOfData);
 let max = Math.max(...arrayOfData);
 
-let gridMin = Math.round(min / 5) * 5 - 2;
-let gridMax = Math.round(max / 5) * 5 + 2;
+let gridMin = Math.round(min / 5) * 5 - 5;
+let gridMax = Math.round(max / 5) * 5 + 1;
 
 const dataRange = gridMax - gridMin;
 const dataLength = arr.length;
