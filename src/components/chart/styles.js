@@ -4,16 +4,21 @@ export const ChartContainer = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
+
+  @media (max-width: 450px) {
+    overflow-x: scroll;
+  }
   `;
 
 export const Chart = styled.svg`
   width: 90%;
-  min-width: 600px;
   height: 90%;
   position: absolute;
   left: 10%;
-  background-color: #182037;
-  
+
+  @media (max-width: 450px) {
+  width: 120%;
+  }
   `;
 
 export const Axes = styled.svg`
@@ -23,4 +28,8 @@ export const Axes = styled.svg`
   color: #fff;
   position: absolute;
   z-index: 5;
+
+  @media (max-width: 450px) {
+  width: 130%;
+  }
 `;

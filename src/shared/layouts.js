@@ -22,13 +22,20 @@ export const Row = styled.div`
 export const Col = styled.div`
   display: flex;
   flex-grow: 1;
+  position: relative;
 `;
 
 export const Main = styled.main`
   flex: 1 1 480px;
+  box-sizing: border-box;
   padding: 20px;
+  position: relative;
   
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 450px) {
+    padding: 20px 0;
+  }
 `;

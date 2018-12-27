@@ -2,7 +2,8 @@ import styled from "@emotion/styled/";
 
 export const NavWrapper = styled.div`
   background-color: #131931;
-  padding: 0 20px;
+  padding: 10px 20px;
+  border-bottom: 1px solid #182037;
 `;
 
 export const NavContainer = styled.div`
@@ -10,10 +11,14 @@ export const NavContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   color: #fdfdfd;
-  border-bottom: 1px solid #182037;
+
+  @media (max-width: 900px) {
+    justify-content: center;
+  }
 `;
 
 export const Logo = styled.div`
   font-size: 2rem;
+  font-weight: 700;
   color: white;
 `;

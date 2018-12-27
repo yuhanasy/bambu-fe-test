@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import Nav from "./components/nav/index";
 import SideBar from "./components/sidebar/index";
+import { Header, SubHeader } from './components/header/styles';
 import { Page, Row, Col, Main } from "./shared/layouts";
 import { Card } from "./components/card/styles";
 import ChartWrapper from "./components/chart/index";
@@ -47,6 +48,12 @@ class App extends Component {
               selected={localStorage.getItem("symbol")}
             />
             <Main>
+              <Header>
+                Welcome
+                <SubHeader>
+                  Let's check your favorite stock
+                </SubHeader>
+              </Header>
               <Card>
                 <ChartWrapper />
               </Card>

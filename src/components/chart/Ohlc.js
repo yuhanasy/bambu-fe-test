@@ -7,7 +7,7 @@ const bearish = '#ea647f'
 
 const Ohlc = ({ arr, width, height, intervalX, coordinateY }) => {
   return (
-    <Chart viewBox={`0 0 ${width} ${height}`} preserveAspectRatio='xMidYMid meet'>
+    <Chart viewBox={`0 0 ${width} ${height}`} preserveAspectRatio='none'>
       <g id="ohlc">
         {arr.map((data, index) => {
           let x = index * intervalX + intervalX;
