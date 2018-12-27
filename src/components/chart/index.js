@@ -5,10 +5,12 @@ import AxesXY from "./Axes";
 import Ohlc from "./Ohlc";
 
 import { data } from "./data";
-
 const timeSeries = data["Time Series (Daily)"];
-
 let arr = Object.values(timeSeries).reverse();
+
+// const data = JSON.parse(localStorage.getItem('data'));
+// let arr = Object.values(data).reverse();
+// console.log(data)
 
 let flattenData = array => {
   const output = [];
@@ -34,6 +36,7 @@ const dataRange = gridMax - gridMin;
 const dataLength = arr.length;
 
 let yGrids = Array.from(new Array(dataRange), (val, index) => index);
+// let xGrids = Object.keys(data).reverse();
 let xGrids = Object.keys(timeSeries).reverse();
 
 class ChartWrapper extends Component {

@@ -19,18 +19,21 @@ class App extends Component {
     this.fetchSelectedData = this.fetchSelectedData.bind(this)
   }
 
-  // componentDidMount() {
-  //   fetchData().then(res => {console.log(res.data)})
-  // }
+  componentDidMount() {
+    // fetchData().then(res => console.log(res.data['Time Series (Daily)']))
+    // fetchData().then(res => localStorage.setItem('data', JSON.stringify(res.data['Time Series (Daily)'])))
+    // localStorage.setItem('symbol', this.state.symbol)
+  }
 
-  // componentDidUpdate() {
-  //   fetchData(this.state.symbol).then(res => {console.log(res.data)})
-  // }
-
+  componentDidUpdate() {
+    // fetchData(this.state.symbol).then(res => localStorage.setItem('data', JSON.stringify(res.data['Time Series (Daily)'])))
+  }
+  
   fetchSelectedData(symbol) {
     this.setState({
       symbol: symbol
     })
+    localStorage.setItem('symbol', symbol)
   }
 
   render() {
@@ -39,7 +42,7 @@ class App extends Component {
         <Row>
           <Nav />
           <Col>
-            <SideBar symbols={symbols} selectData={this.fetchSelectedData} />
+            <SideBar symbols={symbols} selectData={this.fetchSelectedData} selected={localStorage.getItem('symbol')} />
             <Main>
               <Card>
                 <ChartWrapper />

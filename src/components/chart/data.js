@@ -1,3 +1,5 @@
+// dummy data for development purpose, because access to API is limited 5 times/minute and 500 times/day
+
 export const data = {
   "Time Series (Daily)": {
     "2018-12-26": {
