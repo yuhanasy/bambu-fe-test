@@ -1,5 +1,6 @@
 # Stock Exchange App
 Stock Exchange App is a single page application for viewing the latest stock within OHLC chart.
+You can visit the APP [here](https://yuhanasy.github.io/bambu-fe-test/).
 
 ### Tech
 
