@@ -3,7 +3,7 @@ import styled from "@emotion/styled/";
 export const NavWrapper = styled.div`
   background-color: #131931;
   padding: 10px 20px;
-  border-bottom: 1px solid #182037;
+  border-bottom: 1px solid #293250;
 `;
 
 export const NavContainer = styled.div`
