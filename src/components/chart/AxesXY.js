@@ -24,54 +24,50 @@ let color = '#fff'
 const AxesXY = ({
   width,
   height,
-  yGrids,
   xGrids,
-  intervalY,
-  gridMin,
-  dataLength
+  intervalX,
+  yAxisMin,
+  dataRange
 }) => {
+  let gridYminor = 30;
+  let gridYmajor = 6;
+  let intervalAxisY = (height / (gridYminor));
+  let intervalDataY = dataRange / (gridYminor);
+
+  let gridY = [];
+  for(let i = 0; i < gridYminor; i++) {
+    let coordinateY = (height - (intervalAxisY * i)) * 0.9;
+    let valueY = yAxisMin + intervalDataY * i;
+    if(i % gridYmajor === 0) {
+      gridY.push({coordinateY: coordinateY, valueY: `$ ${valueY}`})
+    } else {
+      gridY.push({coordinateY: coordinateY, valueY: ''})
+    }
+  }
+
+  console.log(gridY)
+
   return (
     <Axes viewBox={`0 0 ${width} ${height}`} preserveAspectRatio='none'>
       <g>
-        {/* <line
-          x1="10%"
-          x2="10%"
-          y1="0"
-          y2="90%"
-          stroke={color}
-          strokeWidth=".5"
-        /> */}
-        {/* <line
-          x1="10%"
-          x2="100%"
-          y1="90%"
-          y2="90%"
-          stroke={color}
-          strokeWidth=".5" */}
-        />
-        {yGrids.map(grid => {
-          let tick = height - grid * intervalY * 0.9 - height * 0.1;
-          let tickMark = gridMin + grid;
-          return (
-            <g key={grid}>
-              <line
-                x1="9%"
-                x2="10%"
-                y1={tick}
-                y2={tick}
-                stroke={color}
-                strokeWidth=".5"
-              />
-              {tickMark % 5 === 0 ? (
-                <text x="10" y={tick} fill={color}>
-                  $ {tickMark}
-                </text>
-              ) : null}
-            </g>
-          );
-        })}
-        {xGrids.map((tickMark, index, arr) => {
-          let tick = (width / dataLength) * index * 0.9 + width * 0.1;
+        {gridY.map(grid => (
+          <g key={grid.coordinateY}>
+            <line
+              x1="9%"
+              x2="10%"
+              y1={grid.coordinateY}
+              y2={grid.coordinateY}
+              stroke={color}
+              strokeWidth=".5"
+            />
+            <text x="5" y={grid.coordinateY} fill={color}>
+              {grid.valueY}
+            </text>
+          </g>
+        ))}
+
+        {xGrids.map((tickMark, index) => {
+          let tick = intervalX * index * 0.9 + width * 0.1;
           if (tickMark.substr(5, 2) !== month) {
             month = tickMark.substr(5, 2);
             return (

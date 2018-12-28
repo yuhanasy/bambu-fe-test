@@ -97,7 +97,7 @@ class App extends Component {
                   </SubHeader>
                 </Header>
                 <Card>
-                  <ChartWrapper symbol={this.state.symbol} data={this.state.data} />
+                  <ChartWrapper symbol={this.state.symbol} data={this.state.data} width={300} height={100} />
                 </Card>
               </Main>
             )}
