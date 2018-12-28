@@ -1,4 +1,4 @@
-import styled from '@emotion/styled/';
+import styled from "@emotion/styled/";
 
 export const Page = styled.div`
   height: 100vh;
@@ -30,7 +30,7 @@ export const Main = styled.main`
   box-sizing: border-box;
   padding: 20px;
   position: relative;
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,4 +38,10 @@ export const Main = styled.main`
   @media (max-width: 450px) {
     padding: 20px 0;
   }
+`;
+
+export const Loading = styled.p`
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
 `;
