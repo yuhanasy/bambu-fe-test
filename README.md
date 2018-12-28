@@ -34,6 +34,11 @@ For production environments...
 $ npm run build
 ```
 
+To launch the app into browser
+```sh
+$ npm start
+```
+
 Then the App will be launched in http://localhost:8080/
 
    [ReactJS]: <https://reactjs.org/>
