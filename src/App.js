@@ -10,23 +10,57 @@ import ChartWrapper from "./components/chart/index";
 import { fetchData } from "./utils/fetchData";
 import { symbols } from "./utils/stockData";
 
+let currentSymbol = localStorage.getItem('symbol') ? localStorage.getItem('symbol') : 'MSFT';
+
 class App extends Component {
   constructor(props) {
+    console.log('constructor')
     super(props);
     this.state = {
-      symbol: "MSFT"
+      symbol: currentSymbol,
+      data: {kosong: "masih kosong"},
+      loading: true
     };
 
     this.fetchSelectedData = this.fetchSelectedData.bind(this);
   }
 
   componentDidMount() {
-    // fetchData().then(res => localStorage.setItem('data', JSON.stringify(res.data['Time Series (Daily)'])))
+    fetchData(currentSymbol).then(res => {
+      this.setState({
+        data: res.data['Time Series (Daily)']
+      })
+    })
+
+
+
+    console.log('MOUNTED');
+    console.log('MOUNTED', this.state.data);
+    console.log('----------------------------------------------');
+    
   }
 
-  componentDidUpdate() {
-    // fetchData(this.state.symbol).then(res => localStorage.setItem('data', JSON.stringify(res.data['Time Series (Daily)'])))
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.symbol !== prevState.symbol) {
+      fetchData(this.state.symbol).then(res => {
+        this.setState({
+          data: res.data['Time Series (Daily)']
+        })
+      })
+    }
+
+    if (this.state.data !== {} && this.state.data !== prevState.data) {
+      this.setState({
+        loading: false
+      })
+    }
+
+    console.log('COMPONENT UPDATED');
+    console.log('++++++++++++++++++++++++++++++++++++++++++++++++++');
+    
   }
+
+
 
   fetchSelectedData(symbol) {
     this.setState({
@@ -37,6 +71,11 @@ class App extends Component {
   }
 
   render() {
+    console.log('RENDER', this.state.symbol);
+    console.log('RENDER', this.state.data);
+    
+    
+    let loading = this.state.loading;
     return (
       <Page>
         <Row>
@@ -47,19 +86,24 @@ class App extends Component {
               selectData={this.fetchSelectedData}
               selected={localStorage.getItem("symbol")}
             />
-            <Main>
-              <Header>
-                Welcome
-                <SubHeader>
-                  Let's check your favorite stock
-                </SubHeader>
-              </Header>
-              <Card>
-                <ChartWrapper />
-              </Card>
-            </Main>
+            {loading ? (
+              <Row>Page Loading</Row>
+            ) : (
+              <Main>
+                <Header>
+                  Welcome
+                  <SubHeader>
+                    Let's check your favorite stock
+                  </SubHeader>
+                </Header>
+                <Card>
+                  <ChartWrapper symbol={this.state.symbol} data={this.state.data} />
+                </Card>
+              </Main>
+            )}
           </Col>
         </Row>
+
       </Page>
     );
   }

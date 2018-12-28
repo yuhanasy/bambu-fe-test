@@ -8,7 +8,7 @@ export function fetchData(symbol = 'MSFT') {
       params: {
         function: 'TIME_SERIES_DAILY',
         symbol: symbol,
-        apikey: 'demo'
+        apikey: '808QSHY7PI3LYUM0'
       }
     })
   )
