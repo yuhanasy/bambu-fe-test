@@ -1,10 +1,12 @@
 {
-  "name": "bambu-life-coding-challenge",
+  "name": "bambu-fe-test",
   "version": "1.0.0",
   "description": "app that shows stocks in OHLC chart",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -18,13 +20,14 @@
   "bugs": {
     "url": "https://github.com/yuhanasy/bambu-fe-test/issues"
   },
-  "homepage": "https://github.com/yuhanasy/bambu-fe-test#readme",
+  "homepage": "http://yuhanasy.github.io/bambu-fe-test",
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.4",
     "css-loader": "^2.0.2",
+    "gh-pages": "^2.0.1",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "react-hot-loader": "^4.6.3",

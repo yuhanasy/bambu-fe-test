@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import Nav from "./components/nav/index";
 import SideBar from "./components/sidebar/index";
+import Footer from "./components/footer/index";
 import { Header, SubHeader } from "./components/header/styles";
 import { Page, Row, Col, Main, Loading } from "./shared/layouts";
 import { Card } from "./components/card/styles";
@@ -96,6 +97,7 @@ class App extends Component {
               </Main>
             )}
           </Col>
+          <Footer />
         </Row>
       </Page>
     );

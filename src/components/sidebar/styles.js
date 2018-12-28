@@ -5,8 +5,6 @@ export const SidebarWrapper = styled.aside`
   background-color: #131931;
   position: relative;
   transition: all .3s ease-in;
-
-  @media (max-height: 600px) {
     overflow-y: scroll;
 
     ::-webkit-scrollbar-button {
@@ -25,7 +23,6 @@ export const SidebarWrapper = styled.aside`
     ::-webkit-scrollbar {
       width: 6px;
     }
-  }
 
   @media (max-width: 900px) {
     width: 120px;
@@ -33,15 +30,18 @@ export const SidebarWrapper = styled.aside`
 
   @media (max-width: 450px) {
     position: absolute;
-    bottom: 40px;
+    bottom: 5vh;
     left: 50%;
     transform: translateX(-50%);
     z-index: 100;
 
     width: 80%;
     height: 10vh;
-    border-radius: 8px;
+    border-radius: 4px;
     overflow-y: scroll;
+    ::-webkit-scrollbar {
+      display: none;
+    }
   }
 `;
 
@@ -57,7 +57,7 @@ export const SidebarCard = styled.li`
   padding-left: 2rem;
   color: #fdfdfd;
   background-color: ${props => (props.selected ? "#62dce9" : "#131931")};
-  border-bottom: 1px solid #182037;
+  border-bottom: 1px solid #293250;
   cursor: pointer;
 
   display: flex;

@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
-import { ChartContainer } from "./styles";
+import { ChartContainer, ChartTitle } from "./styles";
+import { Row } from '../../shared/layouts'
 import AxesXY from "./AxesXY";
 import Ohlc from "./Ohlc";
 
@@ -40,24 +41,28 @@ const ChartWrapper = ({symbol, data, width, height}) => {
   const coordinateY = y => height - (y - yAxisMin) * intervalY;
   return (
     <ChartContainer>
-      <Ohlc
-        arr={arr}
-        width={width}
-        height={height}
-        intervalX={intervalX}
-        coordinateY={coordinateY}
-      />
+      <Row>
+        <ChartTitle>{symbol}</ChartTitle>
+        <Ohlc
+          arr={arr}
+          width={width}
+          height={height}
+          intervalX={intervalX}
+          coordinateY={coordinateY}
+        />
 
-      <AxesXY
-        width={width}
-        height={height}
-        xGrids={xGrids}
-        intervalX={intervalX}
-        yAxisMin={yAxisMin}
-        dataLength={dataLength}
-        dataRange={dataRange}
-      />
+        <AxesXY
+          width={width}
+          height={height}
+          xGrids={xGrids}
+          intervalX={intervalX}
+          yAxisMin={yAxisMin}
+          dataLength={dataLength}
+          dataRange={dataRange}
+        />
+      </Row>
     </ChartContainer>
+
   );
 }
 
