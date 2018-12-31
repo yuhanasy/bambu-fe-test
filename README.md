@@ -28,6 +28,13 @@ Install the dependencies and devDependencies and start the server.
 $ cd bambu-fe-test
 $ npm install
 ```
+In Order to access the API, you have to claim your API KEY in [https://www.alphavantage.co/](https://www.alphavantage.co/).
+Then in the root directory (where di package.json exist) make a new file called `.env`.
+Insert your API KEY into `API_KEY` variable. For example if your API KEY is 83743870254, so it will be:
+
+```
+API_KEY=83743870254
+```
 
 For production environments...
 
