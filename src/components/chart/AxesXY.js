@@ -1,6 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { Axes } from "./styles";
+import { isNullOrUndefined } from "util";
 
 const months = {
   "01": "Jan",
@@ -19,34 +21,27 @@ const months = {
 
 let month = "00";
 
-let color = '#fff'
+let color = "#fff";
 
-const AxesXY = ({
-  width,
-  height,
-  xGrids,
-  intervalX,
-  yAxisMin,
-  dataRange
-}) => {
+const AxesXY = ({ width, height, xGrids, intervalX, yAxisMin, dataRange }) => {
   let gridYminor = 30;
   let gridYmajor = 6;
-  let intervalAxisY = (height / (gridYminor));
-  let intervalDataY = dataRange / (gridYminor);
+  let intervalAxisY = height / gridYminor;
+  let intervalDataY = dataRange / gridYminor;
 
   let gridY = [];
-  for(let i = 0; i < gridYminor; i++) {
-    let coordinateY = (height - (intervalAxisY * i)) * 0.9;
+  for (let i = 0; i < gridYminor; i++) {
+    let coordinateY = (height - intervalAxisY * i) * 0.9;
     let valueY = yAxisMin + intervalDataY * i;
-    if(i % gridYmajor === 0) {
-      gridY.push({coordinateY: coordinateY, valueY: `$ ${valueY}`})
+    if (i % gridYmajor === 0) {
+      gridY.push({ coordinateY: coordinateY, valueY: `$ ${valueY}` });
     } else {
-      gridY.push({coordinateY: coordinateY, valueY: ''})
+      gridY.push({ coordinateY: coordinateY, valueY: "" });
     }
   }
 
   return (
-    <Axes viewBox={`0 0 ${width} ${height}`} preserveAspectRatio='none'>
+    <Axes viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none">
       <g>
         {gridY.map(grid => (
           <g key={grid.coordinateY}>
@@ -88,6 +83,15 @@ const AxesXY = ({
       </g>
     </Axes>
   );
+};
+
+AxesXY.propTypes = {
+  width: PropTypes.number,
+  height: PropTypes.number,
+  xGrids: PropTypes.array,
+  intervalX: PropTypes.number,
+  yAxisMin: PropTypes.number,
+  dataRange: PropTypes.number
 };
 
 export default AxesXY;

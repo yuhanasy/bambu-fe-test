@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { Chart } from "./styles";
 
@@ -54,5 +55,13 @@ const Ohlc = ({ arr, width, height, intervalX, coordinateY }) => {
     </Chart>
   );
 };
+
+Ohlc.propType = {
+  arr: PropTypes.array,
+  width: PropTypes.number,
+  height: PropTypes.number,
+  intervalX: PropTypes.number,
+  coordinateY: PropTypes.number
+}
 
 export default Ohlc;
