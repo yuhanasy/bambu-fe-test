@@ -31,7 +31,6 @@ const ChartWrapper = ({symbol, data, width, height}) => {
   
   const dataRange = yAxisMax - yAxisMin;
   const dataLength = arr.length;
-  console.log(min, max, yAxisMin, yAxisMax, dataRange)
   
   let xGrids = Object.keys(data).reverse();
 

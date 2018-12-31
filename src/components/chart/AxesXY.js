@@ -45,8 +45,6 @@ const AxesXY = ({
     }
   }
 
-  console.log(gridY)
-
   return (
     <Axes viewBox={`0 0 ${width} ${height}`} preserveAspectRatio='none'>
       <g>
